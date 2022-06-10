@@ -21,8 +21,6 @@ function grid() {
     }
 }
 
-
-
 btn.setAttribute('type', 'button');
 btn.textContent = 'Change Grid Size';
 btn.addEventListener('click', () => {
@@ -41,6 +39,3 @@ function newGrid() {
     grid();
 
 }
-
-
-
