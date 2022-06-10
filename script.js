@@ -27,8 +27,8 @@ btn.setAttribute('type', 'button');
 btn.textContent = 'Change Grid Size';
 btn.addEventListener('click', () => {
     gridSize = parseInt(prompt('Number of squares per side:'));
-    
-    while(gridSize > 100) {
+
+    while (gridSize > 100) {
         gridSize = parseInt(prompt('Number of squares per side (max 100):'));
     }
     newGrid()
@@ -39,7 +39,7 @@ function newGrid() {
     squareDimension = 720 / gridSize;
 
     grid();
-    
+
 }
 
 
