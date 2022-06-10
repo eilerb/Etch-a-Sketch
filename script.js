@@ -1,24 +1,46 @@
-let container = document.querySelector('div');
-
-let gridSize = 256
-const squareDimension = 720/16;
+const container = document.querySelector('.container');
+const btn = document.querySelector('button');
+let squareDimension = 720 / 16;
 let color = 'black';
+let gridSize = 16;
 
-for (let i = 0; i < gridSize; i++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    cell.style.boxSizing = 'border-box';
-    cell.style.height = squareDimension + 'px';
-    cell.style.width = squareDimension + 'px';
-    cell.style.border = 'solid black thin';
-    cell.addEventListener('mouseover', () => {
-        cell.style.backgroundColor = color;
-    })
-    container.appendChild(cell);
+document.addEventListener('DOMContentLoaded', grid)
+
+function grid() {
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+        square.style.boxSizing = 'border-box';
+        square.style.height = squareDimension + 'px';
+        square.style.width = squareDimension + 'px';
+        square.style.border = 'solid black thin';
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = color;
+        })
+        container.appendChild(square);
+    }
 }
 
 
 
+btn.setAttribute('type', 'button');
+btn.textContent = 'Change Grid Size';
+btn.addEventListener('click', () => {
+    gridSize = parseInt(prompt('Number of squares per side:'));
+    
+    while(gridSize > 100) {
+        gridSize = parseInt(prompt('Number of squares per side (max 100):'));
+    }
+    newGrid()
+});
+
+function newGrid() {
+    container.innerHTML = '';
+    squareDimension = 720 / gridSize;
+
+    grid();
+    
+}
 
 
 
