@@ -1,16 +1,22 @@
 let container = document.querySelector('div');
 
 let gridSize = 256
-const squareDimension = 960/16;
+const squareDimension = 720/16;
+let color = 'black';
 
 for (let i = 0; i < gridSize; i++) {
-    const square = document.createElement('div');
-    square.classList.add('square');
-    square.style.height = squareDimension + 'px';
-    square.style.width = squareDimension + 'px';
-    square.style.border = 'solid black thin';
-    container.appendChild(square);
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    cell.style.boxSizing = 'border-box';
+    cell.style.height = squareDimension + 'px';
+    cell.style.width = squareDimension + 'px';
+    cell.style.border = 'solid black thin';
+    cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = color;
+    })
+    container.appendChild(cell);
 }
+
 
 
 
