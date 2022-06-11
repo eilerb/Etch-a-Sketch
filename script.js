@@ -1,5 +1,11 @@
 const container = document.querySelector('.container');
-const btn = document.querySelector('button');
+const settings = document.querySelector('.settings');
+const sizeBtn = document.querySelector('button');
+const shaderBtn = document.querySelector('.shader');
+const randomBtn = document.querySelector('.random');
+const eraseBtn = document.querySelector('.erase');
+const borderBtn = document.querySelector('.border');
+
 let squareDimension = 720 / 16;
 let color = 'black';
 let gridSize = 16;
@@ -21,9 +27,9 @@ function grid() {
     }
 }
 
-btn.setAttribute('type', 'button');
-btn.textContent = 'Change Grid Size';
-btn.addEventListener('click', () => {
+sizeBtn.setAttribute('type', 'button');
+sizeBtn.textContent = 'Change Grid Size';
+sizeBtn.addEventListener('click', () => {
     gridSize = parseInt(prompt('Number of squares per side:'));
 
     while (gridSize > 100) {
@@ -32,10 +38,28 @@ btn.addEventListener('click', () => {
     newGrid()
 });
 
+shaderBtn.textContent = 'Shader Mode';
+
+
+randomBtn.textContent = 'RGB Mode';
+
+
+eraseBtn.textContent = 'Eraser';
+eraseBtn.addEventListener('click', () => {
+    const squares = document.querySelectorAll('.square');
+    const squareArray = Array.fromArray(squares);
+    squareArray.forEach(square => {
+        square.removeEventListener('mouseover', tr);
+        square.addEventListener('mousover', () => {
+            square.style.backgroundColor = 'white';
+        } )
+    });
+});
+
+borderBtn.textContent = 'Remove borders';
+
 function newGrid() {
     container.innerHTML = '';
     squareDimension = 720 / gridSize;
-
     grid();
-
 }
