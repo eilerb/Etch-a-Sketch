@@ -7,7 +7,7 @@ const eraseBtn = document.querySelector('.erase');
 const borderBtn = document.querySelector('.borderyes');
 const backgroundBtn = document.querySelector('.background');
 
-let squareDimension = 720 / 16;
+let squareDimension = 640 / 16;
 let color = 'rgba(0, 0, 0, 0.7)';
 let gridSize = 16;
 
@@ -88,7 +88,7 @@ backgroundBtn.addEventListener('click', squareColor);
 
 function newGrid() {
     container.innerHTML = '';
-    squareDimension = 720 / gridSize;
+    squareDimension = 640 / gridSize;
     grid();
 }
 
