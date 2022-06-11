@@ -9,10 +9,17 @@ html {
   padding: 0;
   height: 720px;
   width: 720px;
-  margin-right: 100px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  padding: 20px;
+  /*margin-right: 100px;*/
   background-color: white;
+}
+
+.wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 760px;
+  width: 760px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
 
 .settings {
