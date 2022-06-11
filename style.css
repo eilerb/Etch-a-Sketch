@@ -8,6 +8,14 @@
   border: solid black thick;
 }
 
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
 .content {
   display: flex;
   justify-content: space-around;
@@ -37,7 +45,7 @@ button {
   transition: box-shadow button2s, -ms-transform button1s, -webkit-transform button1s, transform button1s;
   user-select: none;
   -webkit-user-select: none;
-  width: auto;
+  width: 203.9px;
   margin-left: 200px;
 }
 
