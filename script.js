@@ -95,14 +95,3 @@ function toggleBorders() {
         });
     }
 }
-
-function squareColor() {
-    const squares = document.querySelectorAll('.square');
-    const squaresArray = [...squares];
-
-    let squareColor = prompt('Color:');
-
-    squaresArray.forEach(square => {
-        square.style.backgroundColor = squareColor;
-    });
-}
