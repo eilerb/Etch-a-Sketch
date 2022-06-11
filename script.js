@@ -8,23 +8,10 @@ const borderBtn = document.querySelector('.borderyes');
 const backgroundBtn = document.querySelector('.background');
 
 let squareDimension = 640 / 16;
-let color = 'rgba(0, 0, 0, 0.7)';
+let color = 'rgba(0, 0, 0, 1)';
 let gridSize = 16;
 
 document.addEventListener('DOMContentLoaded', grid);
-
-// function coloring(event) {
-//     //for (let i = 0; i < gridSize * gridSize; i++) {
-//         if (eraseBtn.getAttribute('class') === 'erasing') {
-//             squares[i].removeEventListener('mouseover', coloring);
-//             //continue;
-//             return;
-//         }
-//         squares[i].addEventListener('mouseover', () => {
-//             squares[i].style.backgroundColor = color;
-//         })
-//     //}
-// }
 
 function grid() {
     for (let i = 0; i < gridSize * gridSize; i++) {
@@ -44,8 +31,6 @@ function grid() {
         });
         container.appendChild(square);
     }
-
-    // colorSquare();
 }
 
 sizeBtn.setAttribute('type', 'button');
@@ -59,13 +44,11 @@ sizeBtn.addEventListener('click', () => {
     newGrid()
 });
 
-shaderBtn.textContent = 'Shader Mode';
+shaderBtn.textContent = 'New Feature Soon!';
 
+randomBtn.textContent = 'New Feature Soon!';
 
-randomBtn.textContent = 'RGB Mode';
-
-
-eraseBtn.textContent = 'Eraser';
+eraseBtn.textContent = 'New Feature Soon!';
 eraseBtn.addEventListener('click', () => {
     eraseBtn.setAttribute('class', 'erasing');
     const squares = document.querySelectorAll('.square');
@@ -122,14 +105,4 @@ function squareColor() {
     squaresArray.forEach(square => {
         square.style.backgroundColor = squareColor;
     });
-
 }
-
-// function colorSquare() {
-//     const squares = document.querySelectorAll('.square');
-//     const squaresArray = [...squares];
-    
-//     squaresArray.forEach(square => {
-//         square.style.backgroundColor = color;
-//     })
-// }
