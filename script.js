@@ -8,10 +8,10 @@ const borderBtn = document.querySelector('.borderyes');
 const backgroundBtn = document.querySelector('.background');
 
 let squareDimension = 720 / 16;
-let color = 'black';
+let color = 'rgba(0, 0, 0, 0.7)';
 let gridSize = 16;
 
-document.addEventListener('DOMContentLoaded', grid)
+document.addEventListener('DOMContentLoaded', grid);
 
 // function coloring(event) {
 //     //for (let i = 0; i < gridSize * gridSize; i++) {
@@ -35,15 +35,17 @@ function grid() {
         square.style.width = squareDimension + 'px';
         if (borderBtn.getAttribute('class') === 'borderyes') {
             square.style.border = 'solid black thin';
-        }else if (borderBtn.getAttribute('class') === 'borderno') {
+        } else if (borderBtn.getAttribute('class') === 'borderno') {
             square.style.border = 'none';
-        }; 
+        };
         square.style.backgroundColor = 'white';
         square.addEventListener('mouseover', () => {
             square.style.backgroundColor = color;
         });
         container.appendChild(square);
     }
+
+    // colorSquare();
 }
 
 sizeBtn.setAttribute('type', 'button');
@@ -82,6 +84,7 @@ borderBtn.setAttribute('class', 'borderyes');
 borderBtn.addEventListener('click', toggleBorders)
 
 backgroundBtn.textContent = 'Square color';
+backgroundBtn.addEventListener('click', squareColor);
 
 function newGrid() {
     container.innerHTML = '';
@@ -109,3 +112,24 @@ function toggleBorders() {
         });
     }
 }
+
+function squareColor() {
+    const squares = document.querySelectorAll('.square');
+    const squaresArray = [...squares];
+
+    let squareColor = prompt('Color:');
+
+    squaresArray.forEach(square => {
+        square.style.backgroundColor = squareColor;
+    });
+
+}
+
+// function colorSquare() {
+//     const squares = document.querySelectorAll('.square');
+//     const squaresArray = [...squares];
+    
+//     squaresArray.forEach(square => {
+//         square.style.backgroundColor = color;
+//     })
+// }
