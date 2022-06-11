@@ -4,7 +4,7 @@ const sizeBtn = document.querySelector('button');
 const shaderBtn = document.querySelector('.shader');
 const randomBtn = document.querySelector('.random');
 const eraseBtn = document.querySelector('.erase');
-const borderBtn = document.querySelector('.border');
+const borderBtn = document.querySelector('.borderyes');
 const backgroundBtn = document.querySelector('.background');
 
 let squareDimension = 720 / 16;
@@ -33,7 +33,11 @@ function grid() {
         square.style.boxSizing = 'border-box';
         square.style.height = squareDimension + 'px';
         square.style.width = squareDimension + 'px';
-        square.style.border = 'solid black thin';
+        if (borderBtn.getAttribute('class') === 'borderyes') {
+            square.style.border = 'solid black thin';
+        }else if (borderBtn.getAttribute('class') === 'borderno') {
+            square.style.border = 'none';
+        }; 
         square.style.backgroundColor = 'white';
         square.addEventListener('mouseover', () => {
             square.style.backgroundColor = color;
@@ -69,7 +73,7 @@ eraseBtn.addEventListener('click', () => {
         color = 'white';
         square.addEventListener('mousover', () => {
             square.style.backgroundColor = color;
-        } )
+        })
     });
 });
 
@@ -104,8 +108,4 @@ function toggleBorders() {
             square.style.border = '1px solid black';
         });
     }
-
-    
-
-    
 }
